@@ -35,13 +35,13 @@ img {
      position: absolute;
      pointer-events: none;
      z-index: 100000;
-     animation: rotate 2s linear infinite forwards;
+     animation: rotate 4s linear infinite forwards;
 }
 
 .expand {
      border-width: 3px;
      transform: scale(1.5);
-     animation: rotateExpand 3s linear infinite forwards;
+     animation: rotateExpand 1s linear infinite forwards;
 }
 
 @keyframes rotate {
@@ -49,7 +49,7 @@ img {
           transform: translate(-50%, -50%) scale(1) rotate(0deg);
      }
 
-     100% {
+     50% {
           transform: translate(-50%, -50%) scale(1) rotate(360deg);
 
      }
@@ -63,7 +63,7 @@ img {
           border-right-color: rgba(64, 224, 208, 0.7);
           border-bottom-color: rgba(64, 224, 208, 0.8);
           border-left-color: rgba(64, 224, 208, 1);
-          transform: translate(-50%, -50%) scale(1.2) rotate(0deg);
+          transform: translate(-50%, -50%) scale(1) rotate(0deg);
      }
 
      50% {
