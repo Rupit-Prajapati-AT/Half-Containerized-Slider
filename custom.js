@@ -6,6 +6,7 @@ $(document).ready(function () {
           centerPadding: '11%',
           dots: false,
           arrows: false,
+          focusOnSelect: true,
           responsive: [
                {
                     breakpoint: 992,
@@ -36,6 +37,19 @@ $(document).ready(function () {
           centerMode: true,
           centerPadding: '33%',
           dots: false,
+          focusOnSelect: true,
           arrows: false,
      })
+     $(document).on('mousemove', function (e) {
+          var cursor = $('.cursor')
+          cursor.css({ 'left': e.pageX, 'top': e.pageY })
+     })
+     $(document).on('mousedown', function (e) {
+          var cursor = $('.cursor')
+          cursor.addClass('expand')
+          setTimeout(() => {
+               cursor.removeClass('expand')
+          }, 1000);
+     })
 })
+
