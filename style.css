@@ -35,7 +35,7 @@ img {
      position: absolute;
      pointer-events: none;
      z-index: 100000;
-     animation: rotate 4s linear infinite forwards;
+     /* animation: rotate 4s linear infinite forwards; */
 }
 
 .expand {
