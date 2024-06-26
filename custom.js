@@ -30,4 +30,7 @@ $(document).ready(function () {
                },
           ]
      });
+     $(".slick-slider.right").slick({
+          slidesToShow: 1,
+     })
 })

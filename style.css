@@ -8,14 +8,15 @@
      width: calc(700px + 50%);
      margin: 100px 0px 100px auto;
 }
-
 .element {
      margin: 0px 15px 0px 0px;
 }
 
-.slick-list {
+
+.slick-slider.right  .slick-list {
      padding-left: 0px !important;
 }
+
 
 img {
      width: 100%;
