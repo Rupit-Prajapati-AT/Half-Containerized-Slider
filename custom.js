@@ -40,29 +40,32 @@ $(document).ready(function () {
           focusOnSelect: true,
           arrows: false,
      })
-     var cursor = $('.cursor')
+     var cursor = $('.cursor');
+
+     // Follow mouse movement
      $(document).on('mousemove', function (e) {
-          cursor.css({ 'left': e.pageX, 'top': e.pageY })
-     })
-     $(document).on('mousedown', function (e) {
-          cursor.addClass('expand')
-          setTimeout(() => {
-               cursor.removeClass('expand')
+          cursor.css({ 'left': e.pageX, 'top': e.pageY });
+     });
+
+     // Expand cursor on mouse down
+     $(document).on('mousedown', function () {
+          cursor.addClass('expand');
+          setTimeout(function () {
+               cursor.removeClass('expand');
           }, 1000);
-     })
+     });
+
+     // Hover effect on anchor tags
      $('a').each(function () {
           $(this).on('mouseover', function () {
-               cursor.addClass('hover');
-               cursor.text('Click').css('background','rgba(0,0,0,0.4')
+               cursor.addClass('hover').text('Click').css('background', 'rgba(0,0,0,0.4');
                var width = cursor.width();
                cursor.height(width);
           });
 
           $(this).on('mouseleave', function () {
-               cursor.removeClass('hover');
-               cursor.height("auto").width("auto").css('background','transparent').text('');
+               cursor.removeClass('hover').height('auto').width('auto').css('background', 'transparent').text('');
           });
      });
-
 })
 
