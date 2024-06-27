@@ -56,13 +56,14 @@ $(document).ready(function () {
      });
 
      // Hover effect on anchor tags
-     $('a').each(function () {
+     $('a,button').each(function () {
           $(this).on('mouseover', function () {
-               cursor.addClass('hover').text('Click').css('background', 'rgba(0,0,0,0.4');
+               var text = $(this).prop('tagName').toLowerCase();
+               console.log(text)
+               cursor.addClass('hover').text(text).css('background', 'rgba(0,0,0,0.4');
                var width = cursor.width();
                cursor.height(width);
           });
-
           $(this).on('mouseleave', function () {
                cursor.removeClass('hover').height('auto').width('auto').css('background', 'transparent').text('');
           });

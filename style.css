@@ -23,6 +23,17 @@
 img {
      width: 100%;
 }
+button,
+a {
+     padding: 10px;
+     background-color: lightblue;
+     border-radius: 5px;
+     margin: 5px;
+     text-decoration: none;
+     font-size: 18px;
+     line-height: 120%;
+     display: inline-block;
+}
 
 .cursor {
      font-size: 20px;
