@@ -40,16 +40,29 @@ $(document).ready(function () {
           focusOnSelect: true,
           arrows: false,
      })
+     var cursor = $('.cursor')
      $(document).on('mousemove', function (e) {
-          var cursor = $('.cursor')
           cursor.css({ 'left': e.pageX, 'top': e.pageY })
      })
      $(document).on('mousedown', function (e) {
-          var cursor = $('.cursor')
           cursor.addClass('expand')
           setTimeout(() => {
                cursor.removeClass('expand')
           }, 1000);
      })
+     $('a').each(function () {
+          $(this).on('mouseover', function () {
+               cursor.addClass('hover');
+               cursor.text('Click').css('background','rgba(0,0,0,0.4')
+               var width = cursor.width();
+               cursor.height(width);
+          });
+
+          $(this).on('mouseleave', function () {
+               cursor.removeClass('hover');
+               cursor.height("auto").width("auto").css('background','transparent').text('');
+          });
+     });
+
 })
 

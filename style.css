@@ -2,6 +2,7 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
+     cursor: none;
 }
 
 .container {
@@ -24,18 +25,26 @@ img {
 }
 
 .cursor {
+     font-size: 20px;
+     line-height: 120%;
+     font-weight: 500;
+     color: #fff;
      border: 2px dashed rgb(64, 224, 208);
      border-top-color: rgba(64, 224, 208, 0.6);
      border-right-color: rgba(64, 224, 208, 0.7);
      border-bottom-color: rgba(64, 224, 208, 0.8);
      border-left-color: rgba(64, 224, 208, 1);
      border-radius: 50%;
-     width: 30px;
-     height: 30px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 20px;
      position: absolute;
      pointer-events: none;
      z-index: 100000;
-     /* animation: rotate 4s linear infinite forwards; */
+     width: auto;
+     transform: translate(-50%, -50%);
+     /* animation: rotate 2s linear infinite forwards; */
 }
 
 .expand {
@@ -49,7 +58,7 @@ img {
           transform: translate(-50%, -50%) scale(1) rotate(0deg);
      }
 
-     50% {
+     100% {
           transform: translate(-50%, -50%) scale(1) rotate(360deg);
 
      }
@@ -57,13 +66,12 @@ img {
 
 @keyframes rotateExpand {
 
-     0%,
-     100% {
+     0% {
           border-top-color: rgba(64, 224, 208, 0.6);
           border-right-color: rgba(64, 224, 208, 0.7);
           border-bottom-color: rgba(64, 224, 208, 0.8);
           border-left-color: rgba(64, 224, 208, 1);
-          transform: translate(-50%, -50%) scale(1) rotate(0deg);
+          transform: translate(-50%, -50%) scale(1);
      }
 
      50% {
@@ -71,7 +79,15 @@ img {
           border-right-color: rgba(255, 0, 0, 0.7);
           border-bottom-color: rgba(255, 0, 0, 0.8);
           border-left-color: rgba(255, 0, 0, 1);
-          transform: translate(-50%, -50%) scale(1.2) rotate(180deg);
+          transform: translate(-50%, -50%) scale(1.2);
+     }
+
+     100% {
+          border-top-color: rgba(64, 224, 208, 0.6);
+          border-right-color: rgba(64, 224, 208, 0.7);
+          border-bottom-color: rgba(64, 224, 208, 0.8);
+          border-left-color: rgba(64, 224, 208, 1);
+          transform: translate(-50%, -50%) scale(1);
      }
 }
 
