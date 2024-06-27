@@ -41,31 +41,30 @@ $(document).ready(function () {
           arrows: false,
      })
      var cursor = $('.cursor');
+     var text = $('.text');
 
      // Follow mouse movement
-     $(document).on('mousemove', function (e) {
+     $('img').on('mousemove', function (e) {
           cursor.css({ 'left': e.pageX, 'top': e.pageY });
      });
 
      // Expand cursor on mouse down
-     $(document).on('mousedown', function () {
+     $('img').on('mousedown', function () {
           cursor.addClass('expand');
           setTimeout(function () {
                cursor.removeClass('expand');
           }, 1000);
      });
 
-     // Hover effect on anchor tags
-     $('a,button').each(function () {
+     $('img').each(function () {
           $(this).on('mouseover', function () {
-               var text = $(this).prop('tagName').toLowerCase();
-               console.log(text)
-               cursor.addClass('hover').text(text).css('background', 'rgba(0,0,0,0.4');
-               var width = cursor.width();
-               cursor.height(width);
+               cursor.css({ transform: 'translate(-50%, -50%)' });
+               text.css({ transform: 'scale(1)' });
           });
           $(this).on('mouseleave', function () {
-               cursor.removeClass('hover').height('auto').width('auto').css('background', 'transparent').text('');
+               cursor.css({ transform: 'translate(-50%, -50%)' });
+               text.css({ transform: 'scale(0)' });
+
           });
      });
 })

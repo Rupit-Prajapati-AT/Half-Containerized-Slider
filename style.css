@@ -2,7 +2,6 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
-     cursor: none;
 }
 
 .container {
@@ -22,40 +21,34 @@
 
 img {
      width: 100%;
-}
-button,
-a {
-     padding: 10px;
-     background-color: lightblue;
-     border-radius: 5px;
-     margin: 5px;
-     text-decoration: none;
-     font-size: 18px;
-     line-height: 120%;
-     display: inline-block;
+     cursor: none;
 }
 
+
 .cursor {
+     position: absolute;
+     z-index: 100000;
+     pointer-events: none;
+     transform: translate(-50%, -50%);
+     overflow: hidden;
+}
+
+.text {
      font-size: 20px;
      line-height: 120%;
      font-weight: 500;
+     background-color: rgba(64, 224, 208, 1);
      color: #fff;
-     border: 2px dashed rgb(64, 224, 208);
-     border-top-color: rgba(64, 224, 208, 0.6);
-     border-right-color: rgba(64, 224, 208, 0.7);
-     border-bottom-color: rgba(64, 224, 208, 0.8);
-     border-left-color: rgba(64, 224, 208, 1);
      border-radius: 50%;
      display: flex;
      align-items: center;
      justify-content: center;
      padding: 20px;
-     position: absolute;
+     width: 100px;
+     height: 100px;
+     transform: scale(0);
      pointer-events: none;
-     z-index: 100000;
-     width: auto;
-     transform: translate(-50%, -50%);
-     /* animation: rotate 2s linear infinite forwards; */
+     transition: all 0.3s ease-in-out;
 }
 
 .expand {
