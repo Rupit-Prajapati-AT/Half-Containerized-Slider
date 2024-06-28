@@ -2,11 +2,10 @@ $(document).ready(function () {
      $(".slick-slider").slick({
           slidesToShow: 4,
           slidesToScroll: 1,
-          centerMode: true,
-          centerPadding: '11%',
           dots: false,
           arrows: false,
-          focusOnSelect: true,
+          infinite: false,
+          draggable: false,
           responsive: [
                {
                     breakpoint: 992,
@@ -31,24 +30,28 @@ $(document).ready(function () {
                },
           ]
      });
-     $(".slick-slider-right").slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: true,
-          centerPadding: '33%',
-          dots: false,
-          focusOnSelect: true,
-          arrows: false,
+     var slider = $(".slick-slider");
+     var active = $('.slick-active').length
+
+     $(".element").on('click', function () {
+          var currentIndex = slider.slick('slickCurrentSlide');
+          var totalSlides = slider.slick('getSlick').slideCount;
+          console.log(currentIndex, totalSlides, currentIndex == (totalSlides - 4))
+          if (currentIndex == (totalSlides - 4)) {
+               console.log('working')
+               return slider.slick('slickGoTo', 0);
+          } else {
+               return slider.slick('slickNext')
+          }
      })
+
      var cursor = $('.cursor');
      var text = $('.text');
 
-     // Follow mouse movement
      $('img').on('mousemove', function (e) {
           cursor.css({ 'left': e.pageX, 'top': e.pageY });
      });
 
-     // Expand cursor on mouse down
      $('img').on('mousedown', function () {
           cursor.addClass('expand');
           setTimeout(function () {

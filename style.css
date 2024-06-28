@@ -13,17 +13,14 @@
      margin: 0px 15px 0px 0px;
 }
 
-
-.slick-slider-right .slick-list {
-     padding-left: 0px !important;
+.slick-slider .slick-list {
+     padding-right: 11% !important;
 }
-
 
 img {
      width: 100%;
      cursor: none;
 }
-
 
 .cursor {
      position: absolute;
@@ -111,11 +108,19 @@ img {
      .container {
           width: calc(375px + 50%);
      }
+
+     .slick-slider .slick-list {
+          padding-right: 15% !important;
+     }
 }
 
 @media only screen and (max-width: 767px) {
      .container {
           width: calc(275px + 50%);
+     }
+
+     .slick-slider .slick-list {
+          padding-right: 20% !important;
      }
 }
 
@@ -123,5 +128,9 @@ img {
      .container {
           width: 100%;
           padding-left: 15px;
+     }
+
+     .slick-slider .slick-list {
+          padding-right: 33% !important;
      }
 }
