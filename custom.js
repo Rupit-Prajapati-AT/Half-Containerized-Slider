@@ -1,6 +1,6 @@
 $(document).ready(function () {
      $(".slick-slider").slick({
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
           dots: false,
           arrows: false,
@@ -11,33 +11,29 @@ $(document).ready(function () {
                     breakpoint: 992,
                     settings: {
                          slidesToShow: 3,
-                         centerPadding: '15%',
                     }
                },
                {
                     breakpoint: 768,
                     settings: {
                          slidesToShow: 2,
-                         centerPadding: '20%',
                     }
                },
                {
                     breakpoint: 576,
                     settings: {
                          slidesToShow: 1,
-                         centerPadding: '33%',
                     }
                },
           ]
      });
      var slider = $(".slick-slider");
      var active = $('.slick-active').length
+     var totalSlides = slider.slick('getSlick').slideCount;
 
      $(".element").on('click', function () {
           var currentIndex = slider.slick('slickCurrentSlide');
-          var totalSlides = slider.slick('getSlick').slideCount;
-          console.log(currentIndex, totalSlides, currentIndex == (totalSlides - 4))
-          if (currentIndex == (totalSlides - 4)) {
+          if (currentIndex == (totalSlides - active)) {
                console.log('working')
                return slider.slick('slickGoTo', 0);
           } else {
