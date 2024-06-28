@@ -34,10 +34,9 @@ $(document).ready(function () {
      $(".element").on('click', function () {
           var currentIndex = slider.slick('slickCurrentSlide');
           if (currentIndex == (totalSlides - active)) {
-               console.log('working')
-               return slider.slick('slickGoTo', 0);
+               slider.slick('slickGoTo', 0);
           } else {
-               return slider.slick('slickNext')
+               slider.slick('slickNext')
           }
      })
 
